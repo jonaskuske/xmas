@@ -1,6 +1,10 @@
 #Instructions
 
+###Install dependencies
 > npm install
-> run npm build
 
-now needed files are in dist/, you can use npm run dev for hot reloads
+###Start (live) dev server on :8080
+> npm run dev
+
+###Build for production
+> run npm build
