@@ -1,13 +1,21 @@
 import '@styles/main-style';
 
 import '@sounds/xmas';
-import particles_config from './lib/particles.config';
+import particles from 'particlesjs';
 
 const $ = val => val.startsWith('#') ? document.querySelector(val) : document.querySelectorAll(val);
 
 document.addEventListener('DOMContentLoaded', () => {
   injectDoors();
-  particlesJS('particles-js', particles_config); //eslint-disable-line no-undef
+  particles.init({
+    selector: '#particles-js',
+    maxParticles: 200,
+    speed: .7,
+    sizeVariations: 15,
+    color: '#f0f0f0',
+    connectParticles: true,
+    minDistance: 50
+  });
   injectAudio();
 });
 

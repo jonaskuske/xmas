@@ -66,9 +66,6 @@ module.exports = {
   },
   plugins: [
     new ExtractTextWebpackPlugin('styles.css'),
-    new webpack.ProvidePlugin({
-      particlesJS: [path.resolve(__dirname, './src/lib/particles.min.js'), 'particlesJS']
-    }),
     new HtmlWebpackPlugin({
       filename: 'index.html',
       template: 'index.html',

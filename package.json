@@ -9,7 +9,9 @@
   },
   "author": "30421456+jonaskuske@users.noreply.github.com",
   "license": "ISC",
-  "dependencies": {},
+  "dependencies": {
+    "particlesjs": "^2.1.0"
+  },
   "devDependencies": {
     "autoprefixer": "^7.1.6",
     "babel-core": "^6.26.0",
