@@ -2,11 +2,12 @@
 
 const webpack = require('webpack');
 const path = require('path');
-const ExtractTextWebpacklugin = require('extract-text-webpack-plugin');
+const ExtractTextWebpackPlugin = require('extract-text-webpack-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const OptimizeCSSAssets = require('optimize-css-assets-webpack-plugin');
 
-let config = {
+
+module.exports = {
   entry: './src/main.js',
   output: {
     path: path.resolve(__dirname, 'dist'),
@@ -15,8 +16,9 @@ let config = {
   resolve: {
     extensions: ['.js', '.jsx', '.json', '.scss', '.css', 'jpeg', 'jpg', '.gif', '.png', '.svg', '.woff2', '.mp3'],
     alias: {
-      styles: path.resolve(__dirname, 'src/assets/styles'),
-      sound: path.resolve(__dirname, 'src/assets/sound')
+      '@styles': path.resolve(__dirname, 'src/assets/styles'),
+      '@img': path.resolve(__dirname, 'src/assets/images'),
+      '@sounds': path.resolve(__dirname, 'src/assets/sounds')
     },
   },
   module: {
@@ -28,7 +30,7 @@ let config = {
       },
       {
         test: /\.css$/,
-        use: ['css-hot-loader'].concat(ExtractTextWebpacklugin.extract({
+        use: ['css-hot-loader'].concat(ExtractTextWebpackPlugin.extract({
           use: ['css-loader', 'postcss-loader'],
           fallback: 'style-loader'
         })),
@@ -44,7 +46,7 @@ let config = {
       },
       {
         test: /\.(jpe?g|png|gif|svg)$/i,
-        loaders: ['file-loader?context=src/assets/img/&name=images/[path][name].[ext]', {
+        loaders: ['file-loader?context=src/assets/images/&name=images/[path][name].[ext]', {
           loader: 'image-webpack-loader',
           query: {
             mozjpeg: {
@@ -68,7 +70,10 @@ let config = {
     ]
   },
   plugins: [
-    new ExtractTextWebpacklugin('styles.css')
+    new ExtractTextWebpackPlugin('styles.css'),
+    new webpack.ProvidePlugin({
+      particlesJS: [path.resolve(__dirname, './src/lib/particles.min.js'), 'particlesJS']
+    })
   ],
   devServer: {
     contentBase: path.resolve(__dirname, 'dist'),
@@ -78,8 +83,6 @@ let config = {
   },
   devtool: 'eval-source-map'
 };
-
-module.exports = config;
 
 if (process.env.NODE_ENV === 'production') {
   module.exports.plugins.push(

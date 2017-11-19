@@ -1,13 +1,14 @@
-import '../particles.min.js';
-import particlesConfig from '../particles.config';
-import 'styles/index.css';
-import 'sound/xmas.mp3';
+import '../index.html';
+import '@styles/main-style';
+
+import '@sounds/xmas';
+import particles_config from './lib/particles.config';
 
 const $ = val => val.startsWith('#') ? document.querySelector(val) : document.querySelectorAll(val);
 
 document.addEventListener('DOMContentLoaded', () => {
   injectDoors();
-  particlesJS('particles-js', particlesConfig); //eslint-disable-line no-undef
+  particlesJS('particles-js', particles_config); //eslint-disable-line no-undef
   injectAudio();
 });
 
