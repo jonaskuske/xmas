@@ -4,12 +4,10 @@ html, body {
 }
 #particles-js {
     position: absolute;
-    z-index: 0;
     display: block;
     top: 0;
     left: 0;
-    margin: 0;
-    padding: 0;
+    z-index: 0;
     opacity: .6;
 }
 body {
@@ -30,6 +28,9 @@ body {
   overflow: hidden;
   opacity: .95;
   margin-bottom: 4em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 #frosted-glass:before {
  content: '';
@@ -67,11 +68,9 @@ body {
 .title {
     position: relative;
     text-transform: uppercase;
-    width: 100%;
-    margin: 1em 0 1em 0;
     text-align: center;
     font-family: Bahnschrift, Roboto, Sans;
-    color: rgb(245, 245, 245);
+    color: #f5f5f5;
 }
 
 @media not screen and (min-width: 1224px) {
@@ -86,7 +85,24 @@ body {
     }
   
 }
-
+.btn {
+    position: relative;
+    border: none;
+    width: 90px;
+    height: 50%;
+    background-color: transparent;
+    margin: 0 30px 0 30px;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+#shuffle-btn {
+    background-image: url(~@img/shuffle-icon.svg);
+}
+#mute-btn {
+    background-image: url(~@img/mute-icon.svg);
+}
 .door {
     background-image: url(~@img/xmas-ball.png);
     background-position: center;
@@ -96,6 +112,14 @@ body {
     display: flex;
     align-items: flex-end;
     border-radius: 5%;
+    cursor: pointer;
+}
+.door:hover {
+    background-image: url(~@img/xmas-ball.gif);
+}
+.door:active {
+    background-image: url(~@img/xmas-ball.gif);
+    background-color: rgba(0, 0, 0, .75);
 }
 .date {
     font-family: Bahnschrift, Roboto, Sans;
