@@ -7,14 +7,25 @@
   <meta name="theme-color" content="#1e1e1e">
 </head>
 
-<body>
+<body class="invisible">
   <canvas id="particles-js"></canvas>
+  <!-- HEADER -->
   <div id="frosted-glass">
     <input class="btn" id="shuffle-btn" type="button">
     <h1 class="title">adventskalender</h1>
     <input class="btn" id="mute-btn" type="button">
   </div>
-  <div id="calendar">
+  <!--<div class="spacer"></div>-->
+  <!-- KALENDER -->
+  <div class="door-wrapper">
+  </div>
+  <!-- DETAILSEITE -->
+  <div class="gift-wrapper hidden">
+    <input type="button" class="btn" id="back-btn">
+    <h2 class="placeholder">Platzhalter für Tag
+      <span id="gift-view-date"></span>
+      <br>
+      <br>(:</h2>
   </div>
 
 </body>
