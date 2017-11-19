@@ -1,4 +1,3 @@
-import '../index.html';
 import '@styles/main-style';
 
 import '@sounds/xmas';
