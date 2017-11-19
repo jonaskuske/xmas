@@ -7,4 +7,4 @@
 > npm run dev
 
 ### Build for production
-> run npm build
+> npm run build
