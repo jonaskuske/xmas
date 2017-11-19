@@ -1,10 +1,10 @@
 export default {
   particles: {
     number: {
-      value: 99,
+      value: 85,
       density: {
         enable: !0,
-        value_area: 900
+        value_area: 600
       }
     },
     color: {
@@ -26,21 +26,21 @@ export default {
       }
     },
     opacity: {
-      value: .7,
-      random: !0,
+      value: .6,
+      random: !1,
       anim: {
-        enable: !0,
+        enable: !1,
         speed: 1,
         opacity_min: .1,
         sync: !1
       }
     },
     size: {
-      value: 5,
+      value: 4,
       random: !0,
       anim: {
         enable: !0,
-        speed: 40,
+        speed: 20,
         size_min: .1,
         sync: !1
       }
@@ -54,7 +54,7 @@ export default {
     },
     move: {
       enable: !0,
-      speed: 6,
+      speed: 5,
       direction: 'bottom',
       random: !1,
       straight: !1,
@@ -71,7 +71,7 @@ export default {
     detect_on: 'canvas',
     events: {
       onhover: {
-        enable: !0,
+        enable: !1,
         mode: 'bubble'
       },
       onclick: {
@@ -95,8 +95,8 @@ export default {
         speed: 3
       },
       repulse: {
-        distance: 350,
-        duration: .4
+        distance: 180,
+        duration: .2
       },
       push: {
         particles_nb: 4

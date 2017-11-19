@@ -13,7 +13,7 @@ html, body {
 }
 body {
     background-color: darkslategrey;
-    background-image: url(../img/background-night.jpg);
+    background-image: url(~@img/background.jpg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -87,7 +87,7 @@ body {
 }
 
 .door {
-    background-image: url(../img/xmas-ball.png);
+    background-image: url(~@img/xmas-ball.png);
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
