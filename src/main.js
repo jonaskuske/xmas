@@ -20,10 +20,13 @@ document.on('DOMContentLoaded', () => {
 //
 
 function injectDoors() {
-  let days = Array.from(Array(24).keys()).map(val => val + 1); //define Array with entries 1-24
+  let days = []; // Array.from(Array(24).keys()).map(val => val + 1); //define Array with entries 1-24
+  for (let i = 1; i <= 24; i++) {
+    days.push(i);
+  }
   shuffle(days);
-  days.forEach(day => {
-    const door = $.new('div').addClass('door').attr('data-day', day).on('click', navigateToGiftView, passive);
+  days.forEach((day, i) => {
+    const door = $.new('div').addClass('door').addClass(`door-${i + 1}`).attr('data-day', day).on('click', navigateToGiftView, passive);
     const date = $.new('p').addClass('date').txt(day);
     door.append(date);
     calendar.append(door);
