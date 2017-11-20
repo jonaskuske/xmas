@@ -92,4 +92,8 @@ if (process.env.NODE_ENV === 'production') {
     new webpack.optimize.UglifyJsPlugin(),
     new OptimizeCSSAssets()
   );
+} else {
+  module.exports.plugins.push(
+    new webpack.NamedModulesPlugin()
+  );
 }
