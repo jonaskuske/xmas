@@ -15,7 +15,6 @@ body {
 }
 #particles-js {
   position: absolute;
-  display: block;
   top: 0;
   left: 0;
   z-index: 0;
@@ -83,24 +82,17 @@ body {
   background-image: url(~@img/mute-icon.svg);
 }
 .door-wrapper {
+  position: relative;
   height: 100%;
   width: 90%;
-  margin-left: 50%;
-  transform: translateX(-50%);
+  margin: 0 auto;
   display: -ms-grid;
-  -ms-grid-columns: (1fr 15px)[5] 1fr;
-  -ms-grid-rows: (1fr 15px)[3] 1fr;
-  }
-.door-1{-ms-grid-column: 1; -ms-grid-row: 1;}.door-2{-ms-grid-column: 3; -ms-grid-row: 1;}.door-3{-ms-grid-column: 5; -ms-grid-row: 1;}.door-4{-ms-grid-column: 7; -ms-grid-row: 1;}.door-5{-ms-grid-column: 9; -ms-grid-row: 1;}.door-6{-ms-grid-column: 11; -ms-grid-row: 1;}.door-7{-ms-grid-column: 1; -ms-grid-row: 3;}.door-8{-ms-grid-column: 3; -ms-grid-row: 3;}
-.door-9{-ms-grid-column: 5; -ms-grid-row: 3;}.door-10{-ms-grid-column: 7; -ms-grid-row: 3;}.door-11{-ms-grid-column: 9; -ms-grid-row: 3;}.door-12{-ms-grid-column: 11; -ms-grid-row: 3;}.door-13{-ms-grid-column: 1; -ms-grid-row: 5;}.door-14{-ms-grid-column: 3; -ms-grid-row: 5;}.door-15{-ms-grid-column: 5; -ms-grid-row: 5;}.door-16{-ms-grid-column: 7; -ms-grid-row: 5;}
-.door-17{-ms-grid-column: 9; -ms-grid-row: 5;}.door-18{-ms-grid-column: 11; -ms-grid-row: 5;}.door-19{-ms-grid-column: 1; -ms-grid-row: 7;}.door-20{-ms-grid-column: 3; -ms-grid-row: 7;}.door-21{-ms-grid-column: 5; -ms-grid-row: 7;}.door-22{-ms-grid-column: 7; -ms-grid-row: 7;}.door-23{-ms-grid-column: 9; -ms-grid-row: 7;}.door-24{-ms-grid-column: 11; -ms-grid-row: 7;}
-@supports (display: grid) {
-#ms-grid-overwrite {
   display: grid;
   grid-template: repeat(8, 17rem) / repeat(3, 1fr);
   grid-gap: 15px;
-}
-}
+  -ms-grid-columns: (1fr 15px)[2] 1fr;
+  -ms-grid-rows: (12em 15px)[7] 12em;
+  }
 .door {
   background-image: url(~@img/xmas-ball.png);
   background-position: center;
@@ -112,6 +104,17 @@ body {
   border-radius: 5%;
   cursor: pointer;
 }
+.door-1,.door-7,.door-13,.door-19,.door-4,.door-10,.door-16,.door-22 {-ms-grid-column: 1}
+.door-2,.door-8,.door-14,.door-20,.door-5,.door-11,.door-17,.door-23 {-ms-grid-column: 3}
+.door-3,.door-9,.door-15,.door-21,.door-6,.door-12,.door-18,.door-24 {-ms-grid-column: 5}
+.door-1,.door-2,.door-3{-ms-grid-row: 1}
+.door-4,.door-5,.door-6{-ms-grid-row: 3}
+.door-7,.door-8,.door-9{-ms-grid-row: 5}
+.door-10,.door-11,.door-12{-ms-grid-row: 7}
+.door-13,.door-14,.door-15{-ms-grid-row: 9}
+.door-16,.door-17,.door-18{-ms-grid-row: 11}
+.door-19,.door-20,.door-21{-ms-grid-row: 13}
+.door-22,.door-23,.door-24{-ms-grid-row: 15}
 .door:active {
   background-color: rgba(20, 20, 20, .5);
 }
@@ -123,12 +126,11 @@ body {
   user-select: none;
 }
 .content-wrapper {
+  position: relative;
   height: 100%;
   width: 90%;
-  margin-left: 50%;
-  transform: translateX(-50%);
+  margin: 0 auto;
 }
-
 .header-wrapper {
   display: flex;
   justify-content: space-between;
@@ -169,17 +171,31 @@ body {
   .header, .header-wrapper {
     max-width: 1200px;
   }
-  @supports (display: grid) {
-#ms-grid-overwrite {
+  .door-wrapper {
     grid-template: repeat(4, 1fr) / repeat(6, 1fr);
     grid-gap: .75%;
-}
-  }
-  .door-wrapper {
     max-width: 1200px;
     height: 800px;
     width: 80%;
-    }
+    -ms-grid-columns: (1fr 15px)[5] 1fr;
+    -ms-grid-rows: (1fr 15px)[3] 1fr;
+  }
+  .door:hover {
+    background-image: url(~@img/xmas-ball.gif);
+  }
+  .door:active {
+    background-image: url(~@img/xmas-ball.gif);
+  }
+  .door-1,.door-7,.door-13,.door-19 {-ms-grid-column: 1}
+  .door-2,.door-8,.door-14,.door-20 {-ms-grid-column: 3}
+  .door-3,.door-9,.door-15,.door-21 {-ms-grid-column: 5}
+  .door-4,.door-10,.door-16,.door-22{-ms-grid-column: 7}
+  .door-5,.door-11,.door-17,.door-23 {-ms-grid-column: 9}
+  .door-6,.door-12,.door-18,.door-24 {-ms-grid-column: 11}
+  .door-1,.door-2,.door-3,.door-4,.door-5,.door-6{-ms-grid-row: 1}
+  .door-7,.door-8,.door-9,.door-10,.door-11,.door-12{-ms-grid-row: 3}
+  .door-13,.door-14,.door-15,.door-16,.door-17,.door-18{-ms-grid-row: 5}
+  .door-19,.door-20,.door-21,.door-22,.door-23,.door-24{-ms-grid-row: 7}
   .content-wrapper {
     max-width: 1200px;
     height: 400px;
@@ -189,12 +205,6 @@ body {
 
   font-size: 1.4em;
   line-height: 1.3em;
-  }
-  .door:hover {
-    background-image: url(~@img/xmas-ball.gif);
-  }
-  .door:active {
-    background-image: url(~@img/xmas-ball.gif);
   }
 }
 
@@ -214,7 +224,4 @@ body {
 
 .hidden {
   display: none;
-}
-.invisible {
-  visibility: hidden;
 }
