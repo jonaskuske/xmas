@@ -1,5 +1,10 @@
 // my little jQuery :D
 
+// make startsWith() compatible with IE (1 char only)
+if (!String.prototype.startsWith) String.prototype.startsWith = function (str) {
+  return this.split('').splice(0, 1).join('') === str;
+};
+
 //create selector and node creation functions
 let nodes;
 const $ = selector => selector.startsWith('#')
