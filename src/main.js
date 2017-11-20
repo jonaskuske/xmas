@@ -7,8 +7,8 @@ import config from './particles.config';
 
 const passive = { passive: true };
 let audioIsPlaying = false;
-const calendar = $('.door-wrapper')[0];
-const content = $('.content-wrapper')[0];
+const calendar = $('.door-wrapper');
+const content = $('.content-wrapper');
 
 //startup function
 document.on('DOMContentLoaded', () => {
