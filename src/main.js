@@ -20,14 +20,16 @@ document.on('DOMContentLoaded', () => {
 //
 
 function injectDoors() {
-  let days = []; // Array.from(Array(24).keys()).map(val => val + 1); //define Array with entries 1-24
-  for (let i = 1; i <= 24; i++) {
-    days.push(i);
-  }
-  shuffle(days);
+  let days = [].of(24).shuffle();
   days.forEach((day, i) => {
-    const door = $.new('div').addClass('door').addClass(`door-${i + 1}`).attr('data-day', day).on('click', navigateToGiftView, passive);
-    const date = $.new('p').addClass('date').txt(day);
+    const door = $.new('div')
+      .addClass('door')
+      .addClass(`door-${i + 1}`)
+      .attr('data-day', day)
+      .on('click', navigateToGiftView, passive);
+    const date = $.new('p')
+      .addClass('date')
+      .txt(day);
     door.append(date);
     calendar.append(door);
   });
@@ -57,10 +59,4 @@ function navigateToGiftView() {
   $('#gift-view-date').txt(this.dataset.day);
   calendar.addClass('hidden');
   content.removeClass('hidden');
-}
-function shuffle(array) {
-  for (let i = array.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [array[i], array[j]] = [array[j], array[i]];
-  }
 }
