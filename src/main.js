@@ -7,11 +7,11 @@ import config from './particles.config';
 
 const passive = { passive: true };
 let audioIsPlaying = false;
-const calendar = $('.door-wrapper');
-const content = $('.content-wrapper');
+const calendar = $('.door-wrapper').first();
+const content = $('.content-wrapper').first();
 
 //startup function
-document.on('DOMContentLoaded', () => {
+$.ready(() => {
   injectDoors();
   attachListeners();
   startAnimation();
