@@ -4,6 +4,15 @@ html, body {
   font-family: Bahnschrift, Roboto, Sans;
   min-height: 100vh;
 }
+body {
+  background-image: url(~@img/background.jpg);
+  background-color: darkslategrey;
+  background-blend-mode: multiply;
+  will-change: opacity;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
 #particles-js {
   position: absolute;
   display: block;
@@ -12,17 +21,7 @@ html, body {
   z-index: 0;
   opacity: .6;
 }
-body {
-  background-color: darkslategrey;
-  background-image: url(~@img/background.jpg);
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-blend-mode: hard-light;
-}
 #frosted-glass {
-  z-index: 99;
   top: 20px;
   background: inherit;
   width: 100%;
@@ -48,59 +47,12 @@ body {
   box-shadow: inset 0 0 0 600px rgba(130,130,130,.2);
   filter: blur(10px);
 }
-.spacer {
-  height: 150px;
-}
-.door-wrapper {
-  height: 100%;
-  width: 90%;
-  margin-left: 50%;
-  transform: translateX(-50%);
-  display: grid;
-  grid-template: repeat(8, 17rem) / repeat(3, 1fr);
-  grid-gap: 15px;
-}
-.gift-wrapper {
-  height: 100%;
-  width: 90%;
-  margin-left: 50%;
-  transform: translateX(-50%);
-}
-@media screen and (min-width : 1224px) {
-  .door-wrapper {
-    max-width: 1200px;
-    height: 800px;
-    width: 80%;
-    grid-template: repeat(4, 1fr) / repeat(6, 1fr);
-    grid-gap: .75%;
-    }
-  .gift-wrapper {
-    max-width: 1200px;
-    height: 400px;
-    width: 80%;
-  }
-}
-
 .title {
   position: relative;
   text-transform: uppercase;
   text-align: center;
   color: #f5f5f5;
-}
-
-@media not screen and (min-width: 1224px) {
-  .title {
-    font-size: 3.5em;
-  }
-  #frosted-glass {
-    height: 160px;
-  }
-  #frosted-glass:before {
-    height: calc(160px + 50px);
-  }
-  .spacer {
-    height: 210px;
-  }
+  font-size: 2.5em;
 }
 .btn {
   position: relative;
@@ -113,6 +65,10 @@ body {
   background-size: contain;
   background-repeat: no-repeat;
   cursor: pointer;
+  outline: none;
+}
+.btn, .btn:focus, .btn:active {
+  outline: none;
 }
 #shuffle-btn {
   background-image: url(~@img/shuffle-icon.svg);
@@ -123,7 +79,16 @@ body {
 #back-btn {
   background-image: url(~@img/back-icon.svg);
   height: 100px;
-  width: 1o0px;
+  width: 100px;
+}
+.door-wrapper {
+  height: 100%;
+  width: 90%;
+  margin-left: 50%;
+  transform: translateX(-50%);
+  display: grid;
+  grid-template: repeat(8, 17rem) / repeat(3, 1fr);
+  grid-gap: 15px;
 }
 .door {
   background-image: url(~@img/xmas-ball.png);
@@ -136,12 +101,8 @@ body {
   border-radius: 5%;
   cursor: pointer;
 }
-.door:hover {
-  background-image: url(~@img/xmas-ball.gif);
-}
 .door:active {
-  background-image: url(~@img/xmas-ball.gif);
-  background-color: rgba(0, 0, 0, .75);
+  background-color: rgba(0, 0, 0, .7);
 }
 .date {
   font-size: 4em;
@@ -149,6 +110,12 @@ body {
   margin: 0 0 8% 8%;
   color: rgb(245,245,245);
   user-select: none;
+}
+.gift-wrapper {
+  height: 100%;
+  width: 90%;
+  margin-left: 50%;
+  transform: translateX(-50%);
 }
 .placeholder {
   font-size: 4em;
@@ -160,6 +127,46 @@ body {
   background-color: rgba(0, 0, 0, .9);
   height: 100%;
 }
+
+/*Desktop - only*/
+@media screen and (min-width : 1224px) {
+  body {
+    background-attachment: fixed;
+  }
+  .door-wrapper {
+    max-width: 1200px;
+    height: 800px;
+    width: 80%;
+    grid-template: repeat(4, 1fr) / repeat(6, 1fr);
+    grid-gap: .75%;
+    }
+  .gift-wrapper {
+    max-width: 1200px;
+    height: 400px;
+    width: 80%;
+  } 
+  .door:hover {
+    background-image: url(~@img/xmas-ball.png);
+    background-image: url(~@img/xmas-ball.gif);
+  }
+  .door:active {
+    background-image: url(~@img/xmas-ball.gif);
+  }
+}
+
+/*Mobile - only*/
+@media screen and (max-width: 1224px) {
+  .title {
+    font-size: 3.5em;
+  }
+  #frosted-glass {
+    height: 160px;
+  }
+  #frosted-glass:before {
+    height: calc(160px + 50px);
+  }
+}
+
 .hidden {
   display: none;
 }
