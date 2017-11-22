@@ -12,15 +12,15 @@ const content = $('.content-wrapper').first();
 
 //startup function
 $.ready(() => {
+  $('#audio-player').on('play', () => { audioIsPlaying = true; });
   injectDoors();
   attachListeners();
   startAnimation();
-  $('#audio-player').on('play', () => { audioIsPlaying = true; });
 });
 //
 
 function injectDoors() {
-  let days = [].of(24).shuffle();
+  let days = [].build(24).shuffle();
   days.forEach((day, i) => {
     const door = $.new('div')
       .addClass('door')
