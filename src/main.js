@@ -7,18 +7,22 @@ import config from './particles.config';
 
 const passive = { passive: true };
 let audioIsPlaying = false;
+let playIsAutoplay = true;
 const calendar = $('.door-wrapper').first();
 const content = $('.content-wrapper').first();
 
 //startup function
 $.ready(() => {
-  $('#audio-player').on('play', () => { audioIsPlaying = true; });
   injectDoors();
   attachListeners();
   startAnimation();
 });
 //
-
+// called by audio HTML element once onplay fires
+window.handleAudioStart = function () { //eslint-disable-line no-unused-vars
+  if (playIsAutoplay) audioIsPlaying = true;
+};
+//
 function injectDoors() {
   const date = new Date();
   let days = (new Array).build(24).shuffle();
@@ -43,6 +47,7 @@ function attachListeners() {
     injectDoors();
   }, passive);
   $('#mute-btn').on('click', () => {
+    playIsAutoplay = false;
     audioIsPlaying
       ? $('#audio-player').pause()
       : $('#audio-player').play();
