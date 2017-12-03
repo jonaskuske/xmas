@@ -24,7 +24,7 @@ Array.prototype.shuffle = function () {
 Array.prototype.build = function (num) { for (let i = 1; i <= num; i++) { this.push(i); } return this; };
 
 // Polyfills: append and startsWith
-if (!Object.prototype.append) { Object.prototype.append = function (node) { return this.appendChild(node); }; }
+if (!Document.prototype.append) { Object.prototype.append = function (node) { return this.appendChild(node); }; }
 if (!String.prototype.startsWith) String.prototype.startsWith = function (str) {
   return this.split('').splice(0, 1).join('') === str;
 };
