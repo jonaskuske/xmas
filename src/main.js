@@ -14,15 +14,17 @@ const content = $('.content-wrapper')[0];
 //startup function
 $.ready(() => {
   injectDoors();
+  handleAudioStart();
   attachListeners();
   startAnimation();
 });
 //
-// called by audio HTML element once onplay fires
-window.handleAudioStart = function () { //eslint-disable-line no-unused-vars
-  if (playIsAutoplay) audioIsPlaying = true;
-};
-//
+
+function handleAudioStart() {
+  $('#audio-player')
+    .attr('autoplay', true)
+    .on('play', () => { if (playIsAutoplay) audioIsPlaying = true; }); //autoplay disallowed on mobile -> if it worked, update audioIsPlaying
+}
 function injectDoors() {
   const date = new Date();
   let days = (new Array).build(24).shuffle();
