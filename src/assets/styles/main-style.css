@@ -222,13 +222,12 @@ body {
   }
 }
 .disabled, .disabled:hover, .disabled:active {
+  cursor: default;
   background-image: url(~@img/xmas-ball.png);
+  background-color: rgba(0, 0, 0, .9);
 }
 .disabled p {
   color: #808080;
-}
-.disabled:active {
-  background-color: rgba(0, 0, 0, .9);;
 }
 .hidden {
   display: none;
