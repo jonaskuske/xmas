@@ -115,8 +115,11 @@ body {
 .door-16,.door-17,.door-18{-ms-grid-row: 11}
 .door-19,.door-20,.door-21{-ms-grid-row: 13}
 .door-22,.door-23,.door-24{-ms-grid-row: 15}
-.door:active {
-  background-color: rgba(20, 20, 20, .5);
+.door:hover, .door:active p {
+  text-shadow: 2px 1px 4px lightslategray;
+}
+.door:active p {
+  color: hsla(355, 80%, 40%, 0.85);
 }
 .date {
   font-size: 4em;
@@ -224,9 +227,8 @@ body {
 .disabled, .disabled:hover, .disabled:active {
   cursor: default;
   background-image: url(~@img/xmas-ball.png);
-  background-color: rgba(0, 0, 0, .9);
 }
-.disabled p {
+.disabled p, .disabled:active p {
   color: #808080;
 }
 .hidden {
