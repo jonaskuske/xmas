@@ -21,13 +21,13 @@ $.ready(() => {
 
 function injectDoors() {
   const date = new Date();
-  let days = [].build(24).shuffle();
+  let days = (new Array).build(24).shuffle();
   days.forEach((day, i) => {
     const door = $.new('div')
       .addClass('door')
       .addClass(`door-${i + 1}`)
       .attr('data-day', day);
-    day <= date.getDate() //&& date.getMonth() === 11
+    day <= date.getDate() && date.getMonth() === 11
       ? door.on('click', navigateToGiftView, passive)
       : door.addClass('disabled');
     const dateTag = $.new('p')

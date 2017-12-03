@@ -172,7 +172,7 @@ body {
     max-width: 1200px;
   }
   .door-wrapper {
-    grid-template: repeat(4, 1fr) / repeat(6, 1fr);
+    grid-template: repeat(4, 1fr) 25px / repeat(6, 1fr);
     grid-gap: .75%;
     max-width: 1200px;
     height: 800px;
@@ -221,7 +221,15 @@ body {
     height: calc(160px + 50px);
   }
 }
-
+.disabled, .disabled:hover, .disabled:active {
+  background-image: url(~@img/xmas-ball.png);
+}
+.disabled p {
+  color: #808080;
+}
+.disabled:active {
+  background-color: rgba(0, 0, 0, .9);;
+}
 .hidden {
   display: none;
 }
