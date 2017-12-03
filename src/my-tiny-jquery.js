@@ -21,7 +21,7 @@ Array.prototype.shuffle = function () {
     [this[i], this[j]] = [this[j], this[i]];
   } return this;
 };
-Array.prototype.of = function (num) { for (let i = 1; i <= num; i++) { this.push(i); } return this; };
+Array.prototype.build = function (num) { for (let i = 1; i <= num; i++) { this.push(i); } return this; };
 
 // Polyfills: append and startsWith
 if (!Object.prototype.append) { Object.prototype.append = function (node) { return this.appendChild(node); }; }
