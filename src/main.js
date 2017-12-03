@@ -20,17 +20,20 @@ $.ready(() => {
 //
 
 function injectDoors() {
+  const date = new Date();
   let days = [].of(24).shuffle();
   days.forEach((day, i) => {
     const door = $.new('div')
       .addClass('door')
       .addClass(`door-${i + 1}`)
-      .attr('data-day', day)
-      .on('click', navigateToGiftView, passive);
-    const date = $.new('p')
+      .attr('data-day', day);
+    day <= date.getDate() //&& date.getMonth() === 11
+      ? door.on('click', navigateToGiftView, passive)
+      : door.addClass('disabled');
+    const dateTag = $.new('p')
       .addClass('date')
       .txt(day);
-    door.append(date);
+    door.append(dateTag);
     calendar.append(door);
   });
 }
