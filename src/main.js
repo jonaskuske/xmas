@@ -22,8 +22,8 @@ $.ready(() => {
 
 function handleAudioStart() {
   $('#audio-player')
-    .attr('autoplay', true)
-    .on('play', () => { if (playIsAutoplay) audioIsPlaying = true; }); //autoplay disallowed on mobile -> if it worked, update audioIsPlaying
+    .on('play', () => { if (playIsAutoplay) audioIsPlaying = true; })
+    .attr('autoplay', true); //autoplay disallowed on mobile -> if it worked, update audioIsPlaying
 }
 function injectDoors() {
   const date = new Date();
