@@ -4,7 +4,7 @@
 ```javascript
 $('.door').forEach(door => {
   door.on('click', () => {
-    $('#gift-view-date').txt(door.nextChild.textContent);
+    $('#gift-view-date').txt(door.firstChild.textContent);
     $('.door-wrapper')[0].addClass('hidden');
     $('.content-wrapper')[0].removeClass('hidden');
   });
