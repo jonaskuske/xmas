@@ -81,8 +81,7 @@ module.exports = {
   devServer: {
     contentBase: path.resolve(__dirname, 'dist'),
     historyApiFallback: true,
-    inline: true,
-    open: true
+    inline: true
   },
   devtool: 'eval-source-map'
 };

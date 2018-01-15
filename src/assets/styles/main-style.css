@@ -5,13 +5,10 @@ html, body {
   min-height: 100%;
 }
 body {
-  background-image: url(~@img/background.jpg);
+  background: url(~@img/background.jpg) center / cover no-repeat;
   background-color: darkslategrey;
   background-blend-mode: hard-light;
   will-change: opacity;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
 }
 #particles-js {
   position: absolute;
@@ -64,11 +61,8 @@ body {
   border: none;
   width: 90px;
   height: 50%;
-  background-color: transparent;
+  background: transparent center / contain no-repeat;
   margin: 0 30px 0 30px;
-  background-position: center;
-  background-size: contain;
-  background-repeat: no-repeat;
   cursor: pointer;
   outline: none;
 }
@@ -94,10 +88,7 @@ body {
   -ms-grid-rows: (12em 15px)[7] 12em;
   }
 .door {
-  background-image: url(~@img/xmas-ball.png);
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
+  background: url(~@img/xmas-ball.png) center / cover no-repeat;
   background-color: rgba(0, 0, 0, .9);
   display: flex;
   align-items: flex-end;
