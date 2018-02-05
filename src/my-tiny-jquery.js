@@ -1,7 +1,7 @@
 // my little jQuery :D
 
 //create selector and node creation functions
-const $ = selector => selector.startsWith('#')
+const $ = selector => selector.startsWith('#') || selector === 'html' || selector === 'body'
   ? document.querySelector(selector)
   : document.querySelectorAll(selector);
 $.new = node => document.createElement(node);
