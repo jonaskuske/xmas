@@ -1,4 +1,4 @@
-# Adventskalender
+# Advent calendar
 
 ***In case it's not december and the doors are locked, you can still open them by pasting the following code into the console:***
 ```javascript
