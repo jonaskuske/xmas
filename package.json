@@ -5,7 +5,7 @@
   "main": "main.js",
   "scripts": {
     "dev": "webpack-dev-server -d --hot --config ./webpack.config.js --watch",
-    "build": "SET NODE_ENV=production & webpack -p --config ./webpack.config.js"
+    "build": "cross-env NODE_ENV=production webpack --config ./webpack.config.js"
   },
   "author": "30421456+jonaskuske@users.noreply.github.com",
   "license": "ISC",
@@ -17,11 +17,13 @@
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
     "babel-preset-env": "^1.6.1",
+    "cross-env": "^7.0.3",
     "css-hot-loader": "^1.3.3",
     "css-loader": "^0.28.7",
     "exports-loader": "^0.6.4",
     "extract-text-webpack-plugin": "^3.0.2",
     "file-loader": "^1.1.5",
+    "gh-pages": "^3.2.3",
     "html-webpack-plugin": "^2.30.1",
     "image-webpack-loader": "^3.4.2",
     "node-sass": "^4.7.1",
